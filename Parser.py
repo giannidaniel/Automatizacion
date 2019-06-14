@@ -12,7 +12,7 @@ class Parser():
         novacios= list(map(lambda x:x!="",encabezado[:21]))
         encabezado= list(filter(lambda x:x!="",encabezado[:21]))
 
-    ##Obtiene los datos de ada usuario
+    ##Obtiene los datos de cada usuario
         usuarios=self.archivo.split("The command completed successfully.")
         datos=[]
         for usuario in usuarios:
