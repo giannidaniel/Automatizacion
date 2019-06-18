@@ -2,7 +2,7 @@ from Parser import *
 import pandas as pd
 
 carga = Parser()
-archivo = (r'C:\Users\Dani\Desktop\Automatizacion\entradas\salida.txt')
+archivo = (r'C:\Users\Dani\Desktop\Automatizacion\entradas\C06.txt')
 dataframe = carga.parser_discos(archivo)
 data=dataframe[["FileSystem"]]
 #Filtra los valores == 'NTFS' de la columna FileSystem y devuelve false si hay almenos 1 valor distinto de 'NTFS'
