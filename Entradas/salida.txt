@@ -1,0 +1,7 @@
+﻿
+name                       FileSystem                                 drivetype
+----                       ----------                                 ---------
+C:                         NTFS                                               3
+C:                         FAT32                                              3
+
+

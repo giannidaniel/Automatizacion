@@ -1,4 +1,5 @@
 import pandas as pd
+from carga import *
 
 class Parser():
     
@@ -27,6 +28,23 @@ class Parser():
 
         return df
             
-    def parser_discos(archivo):
-        pass
+    def parser_discos(self,archivo):
+        #Llamo a la clase carga() para que lea el archivo y lo guarde en una lista.
+        cargar = carga()
+        Lista = cargar.cargador(archivo)
+        #Separa el archivo en listas por el caracter  "\n".
+        Lista = Lista.split('\n')
+        #elimina las ultimas lineas.
+        Lista.pop()
+        Lista.pop()
+        Lista.pop()
+        Lista.pop(2)
+        datoscrudos=Lista[2:]
+        datos=[]
+        #Delimita las lineas de la 2 en adelante dejando solo el dato sin espacios.
+        for linea in datoscrudos:
+            datos.append(linea.split())
+        #Genera un data frame donde las columnas son la fila 1 de la lista y los datos son todas las lineas de la 2 en adelante.
+        df = pd.DataFrame(columns = Lista[1].split(), data = datos) 
+        return df
         
