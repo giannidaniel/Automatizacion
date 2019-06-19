@@ -1,6 +1,0 @@
-﻿
-name                       FileSystem                                 drivetype
-----                       ----------                                 ---------
-C:                         NTFS                                               3
-
-

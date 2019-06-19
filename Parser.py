@@ -1,6 +1,3 @@
-import pandas as pd
-from carga import *
-
 class Parser():
     
     def parser_users(self,archivo):
@@ -13,7 +10,7 @@ class Parser():
         novacios= list(map(lambda x:x!="",encabezado[:21]))
         encabezado= list(filter(lambda x:x!="",encabezado[:21]))
 
-    ##Obtiene los datos de cada usuario
+    ##Obtiene los datos de ada usuario
         usuarios=self.archivo.split("The command completed successfully.")
         datos=[]
         for usuario in usuarios:
@@ -27,11 +24,12 @@ class Parser():
         df=pd.DataFrame(data=datos,columns=encabezado)
 
         return df
-            
+
+    
     def parser_discos(self,archivo):
         #Llamo a la clase carga() para que lea el archivo y lo guarde en una lista.
         cargar = carga()
-        Lista = cargar.cargador(archivo)
+        Lista = cargar.cargador_utf8(archivo)
         #Separa el archivo en listas por el caracter  "\n".
         Lista = Lista.split('\n')
         #elimina las ultimas lineas.
@@ -47,4 +45,3 @@ class Parser():
         #Genera un data frame donde las columnas son la fila 1 de la lista y los datos son todas las lineas de la 2 en adelante.
         df = pd.DataFrame(columns = Lista[1].split(), data = datos) 
         return df
-        
