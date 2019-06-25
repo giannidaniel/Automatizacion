@@ -17,4 +17,4 @@ foreach($usuario in $usuarios_locales)
 
 $usuarios += $usuarios_finales | ForEach-Object { cmd.exe /c net user "$_" } 
 
-$usuarios  | Out-File Usuarios.txt -Encoding 'utf8'
+$usuarios  | Out-File C02_$computer_name.txt -Encoding 'utf8'
